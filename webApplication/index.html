@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="c3/c3.css">
+
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="c3/c3.min.js"></script>
+
+	<script type="text/JavaScript" src="bootstrap/js/bootstrap.js"></script> 
+
+	
+	
+
+	<title></title>
+</head>
+<body>
+	
+
+
+
+
+
+<div class="jumbotron">
+
+  <h1>Modeling and Visualization of Renal Fluid Flow</h1>
+  <p>A visualization of a model of renal fluid flow, utlizing d3.js.</p>
+  <p><a href="#soicanlinktocarousel">Learn More</a> </p>
+
+<!--  <p><a class="btn btn-primary btn-lg">Learn more</a></p> !-->
+</div>
+
+<div class = "pagegap"></div>
+
+<div class="carouselcontainer"  id= "soIcanlinktocarousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="http://placehold.it/1200x500/16a085/ffffff&text=Introduction">
+                <div class="carousel-caption">
+                    <!-- <h3>Introduction</h3> -->
+                    <p>
+                        A project by Zanele Munyikwa under the advisement of Professor Anita Layton, Duke Department of Mathemathics <br></br> Based upon the work of Ioannis Sgouralis and Anita T. Layton</p> <br></br><a class="btn btn-default" href= "http://www.facebook.com">View My Paper </a> <a class="btn btn-default" href= "../paper.pdf">View Their Paper </a>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+                <img src="http://placehold.it/1200x500/e67e22/ffffff&text=Overview">
+                <div class="carousel-caption">
+                    <!-- <h3>
+                        Headline</h3> -->
+                    <p> <br></br><br></br>
+                        To model hemodynamics control in the rat kidney, we developed a model that combines: (i) an afferent arteriole model previously developed by us; (ii) a glomerular filtration model developed by Deen et al. ; (iii) a renal tubule model previously developed by us. The present model can be used as an essential component in models of integrated renal hemodynamic regulation.</p>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+                <img src="http://placehold.it/1200x500/2980b9/ffffff&text=Background">
+                <div class="carousel-caption">
+                    <!-- <h3>
+                        Headline</h3> -->
+                    <p>
+                        The model afferent arteriole is myo- genically active and represents smooth muscle membrane potential and electrical coupling. The myogenic mechanism is based on the assumption that the activity of non-selective cation channels is shifted by changes in transmural pressure, such that elevation in pressure induces vasoconstriction which increases resistance to blood flow. From the afferent arteriole’s fluid delivery output, glomerular fil- tration rate is computed, based on conservation of plasma and plasma protein. Chloride concentration is then computed along the renal tubule based on solute conservation that represents water reabsorption along the proximal tubule and the water-permeable segment of the descending limb, and chloride fluxes driven by passive diffusion and active transport. </p>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+                <img src="http://placehold.it/1200x500/8e44ad/ffffff&text=Project Objectives">
+                <div class="carousel-caption">
+                    <!-- <h3>
+                        Headline</h3> -->
+                    <p>
+                Firstly, I will establish a basic knowledge of the renal system, with a focus on autoregulatory mechanisms.  I will learn how to model the autoregulatory mechanism using ordinary and partial differential equations. Secondly, I will study the MATLAB script for the existing model in order to establish an understanding of the way it functions in order to convert said model into C. Finally, I will utilize existing Javascript, HTML, and CSS knowledge to create a graphical user interface for the model, along with the help of a modeling and visualization package such as Cmgui. A visualization of the model will allow for clinicans who are not educated in physiology to have a solid understanding of what implications the model has for them as practioners. </p>
+                </div>
+            </div>
+            <!-- End Item -->
+        </div>
+        <!-- End Carousel Inner -->
+        <ul class="nav nav-pills nav-justified">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Introduction<small>
+            	
+            </small></a></li>
+            <li data-target="#myCarousel" data-slide-to="1"><a href="#">Overview<small></small></a></li>
+            <li data-target="#myCarousel" data-slide-to="2"><a href="#">Background<small></small></a></li>
+            <li data-target="#myCarousel" data-slide-to="3"><a href="#">Project Objectives<small></small></a></li>
+        </ul>
+    </div>
+    <!-- End Carousel -->
+</div>
+
+<div id="chartcontainer"> 
+
+<div><h2 class = "charttitle">Chart 1</h2></div>
+<div id="chart1"></div>
+<div class="chartdescription"><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+<div><h2 class = "charttitle">Chart 2</h2></div>
+<div id= "chart2"></div>
+<div class="chartdescription"><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+<div><h2 class = "charttitle">Chart 3</h2></div>
+<div id= "chart3"></div>
+<div class="chartdescription"><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+<div><h2 class = "charttitle">Chart 4</h2></div>
+<div id= "chart4"></div>
+<div class="chartdescription"><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+<div><h2 class = "charttitle">Chart 5</h2></div>
+<div id= "chart5"></div>
+<div class="chartdescription"><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+<div><h2 class = "charttitle">Chart 6</h2></div>
+<div id= "chart6"></div>
+<div class="chartdescription"><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+<div><h2 class = "charttitle">Chart 7</h2></div>
+<div id= "chart7"></div>
+<div class="chartdescription"><p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div>
+
+
+
+
+</div>
+ 
+    <script>
+  var chart1 = c3.generate({
+    bindto: '#chart1',
+    data: {
+        url: 'data/figure31.csv',
+        x: 't(s)',
+        selection: {
+            enabled: true
+        }
+    },
+    zoom: {
+        enabled: true
+    },
+    subchart: {
+        show: true
+    },
+    axis: {
+        x: {
+            label: 't(s)'
+        },
+        y: {
+            label: 'CMD (mM)'
+        }
+        
+    }
+});
+
+
+    var chart2 = c3.generate({
+        bindto: '#chart2',
+    data: {
+        
+        url: 'data/figure33.csv',
+        x: 't(s)',
+        selection: {
+            enabled: true
+        }
+    
+    },
+    zoom: {
+        enabled: true
+    },
+    subchart: {
+        show: true
+    },
+    axis: {
+        x: {
+            label: 'Q (nL/min)'
+        },
+        y: {
+            label: 'Y Axis Label'
+        }
+       
+    }
+});
+
+
+      var chart3 = c3.generate({
+        bindto: '#chart3',
+        data: {
+        url: 'data/figure21.csv',
+        x: 't(s)',
+        selection: {
+            enabled: true
+        }
+    
+    },
+    zoom: {
+        enabled: true
+    },
+    subchart: {
+        show: true
+    },
+    axis: {
+        x: {
+            label: 't(s)'
+        },
+
+        y: {
+            label: 'Activation'
+        }
+        
+    }
+});
+
+var chart4 = c3.generate({
+        bindto: '#chart4',
+        data: {
+        url: 'data/figure22.csv',
+        x: 't(s)',
+        selection: {
+            enabled: true
+        }
+
+    },
+    zoom: {
+        enabled: true
+    },
+    subchart: {
+        show: true
+    },
+    axis: {
+         x: {
+            label: 't(s)'
+        },
+
+        y: {
+            label: "diameter (\mu  m"
+        }
+    }
+});
+
+var chart5 = c3.generate({
+        bindto: '#chart5',
+    data: {
+        
+        url: 'data/figure23.csv',
+        x: 'Pressure (mmHg)',
+        selection: {
+            enabled: true
+        }
+
+    },
+    zoom: {
+        enabled: true
+    },
+    subchart: {
+        show: true
+    },
+    axis: {
+        x: {
+            label: 'Pressure (mmHg)'
+        },
+
+        y: {
+            label: 'Steady State Normalized SNGFR'
+        }
+    }
+});
+
+var chart6 = c3.generate({
+        bindto: '#chart6',
+    data: {
+    
+        url: 'data/figure24.csv',
+        x: 'Pressure (mmHg)',
+        selection: {
+            enabled: true
+        }
+    
+    },
+    zoom: {
+        enabled: true
+    },
+    subchart: {
+        show: true
+    },
+    axis: {
+       x: {
+            label: 'Pressure (mmHg)'
+        },
+
+        y: {
+            label: 'Steady State Activation'
+        }
+    }
+});
+
+var chart7 = c3.generate({
+        bindto: '#chart7',
+    data: {
+        
+        url: 'data/figure25.csv',
+        x: 'Pressure (mmHg)',
+        selection: {
+            enabled: true
+        }
+
+    },
+    zoom: {
+        enabled: true
+    },
+    subchart: {
+        show: true
+    },
+    axis: {
+        x: {
+            label: 'Pressure (mmHg)'
+        },
+
+        y: {
+            label: 'Steady State Diameter'
+        }
+    }
+});
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

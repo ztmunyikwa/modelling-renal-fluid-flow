@@ -1,0 +1,40 @@
+<chart caption='Product Sales Comparison' subcaption='Drag the anchors (markers) to adjust data' showvalues='0' xAxisName='Year' yAxisName='Units' restoreBtnBorderColor='A2A3A0' formBtnBorderColor='A2A3A0' canvasPadding='20' dragBorderColor='666666' dragBorderThickness='3'>
+   <categories>
+      <category label='2005 (Actuals)' />
+      <category label='2006 (Actuals)' />
+      <category label='2007 (Predicted)' />
+      <category label='2008 (Predicted)' />
+      <category label='2009 (Predicted)' />
+   </categories>
+   <dataset id='IJ' seriesName='Inkjet Printers'>
+      <set id='IJ2005' value='25601' allowDrag='0'/>
+      <set id='IJ2006' value='20148' allowDrag='0'/>
+      <set id='IJ2007' value='17372' dashed='1'/>
+      <set id='IJ2008' value='35407' dashed='1'/>
+      <set id='IJ2009' value='38105' dashed='1'/>
+   </dataset>
+   <dataset id='LJ' seriesName='Laser Printers' showValues='0'>
+      <set id='LJ2005' value='57401' allowDrag='0'/>
+      <set id='LJ2006' value='41941' allowDrag='0'/>
+      <set id='LJ2007' value='45263' dashed='1'/>
+      <set id='LJ2008' value='117320' dashed='1'/>
+      <set id='LJ2009' value='114845' dashed='1'/>
+   </dataset>
+   <dataset id='CR' seriesName='Cartridges' showValues='0'>
+      <set id='CR2005' value='45000' allowDrag='0'/>
+      <set id='CR2006' value='35835' allowDrag='0'/>
+      <set id='CR2007' value='20722' dashed='1'/>
+      <set id='CR2008' value='77557' dashed='1'/>
+      <set id='CR2009' value='92633' dashed='1'/>
+   </dataset>
+   <styles>
+      <definition>
+         <style name="myCaptionFont" type="font" font="Arial" size="14" bold="1" /> 
+         <style name="mySubCaptionFont" type="font" font="Arial" size="10" bold="0" /> 
+      </definition>
+      <application>
+         <apply toObject="Caption" styles="myCaptionFont" /> 
+         <apply toObject="SubCaption" styles="mySubCaptionFont" /> 
+      </application>
+   </styles>
+</chart>
